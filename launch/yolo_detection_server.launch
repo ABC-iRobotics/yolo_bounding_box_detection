@@ -1,0 +1,13 @@
+<launch>
+
+  <!-- Name of the yolo model to use -->
+  <arg name="yolo_model_name" default="best" />
+  
+  <!-- Start the actual detection server -->
+  <node name="yolo_detection_server" pkg="yolo_bounding_box_detection" type="yolo_detection_server.py" respawn="false" output="screen">
+
+    <param name="yolo_model_name" value="$(arg yolo_model_name)"/>
+
+  </node>
+
+</launch>
